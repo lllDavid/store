@@ -13,8 +13,7 @@ class Cart(models.Model):
     def __str__(self):
         return f"Cart for {self.user.email} - {self.created_at}"
 
-    def get_total_price(self):
-        """ Calculate the total price of the cart by summing the prices of each item. """
+    def get_total_cart_price(self):
         total_price = sum(item.get_item_total() for item in self.cart_items.all())
         return total_price
 
@@ -25,8 +24,7 @@ class CartItem(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"{self.quantity} x {self.product.name}"
+        return f"{self.quantity} x {self.product.name} - Total: {self.get_total_items_price()}"
 
-    def get_item_total(self):
-        """ Calculate the total price of this cart item (product price * quantity). """
+    def get_total_items_price(self):
         return self.product.price * self.quantity

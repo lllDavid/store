@@ -1,10 +1,7 @@
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render
 
 from .models import Product
 
-def home(request):
-    return render(request, 'home.html')
 
 class ProductListView(ListView):
     model = Product
