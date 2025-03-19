@@ -1,0 +1,29 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    margin: 2rem;
+}
+
+h1 {
+    padding: auto;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+    opacity: 0.3;
+}
