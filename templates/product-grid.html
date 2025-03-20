@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product-grid.css' %}">
+<h1>Products</h1>
+
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{% url 'product-detail' product.id %}">
+            <h2>{{ product.name }}</h2>
+            <!-- Image is a example, normally use metadata attribute to store image of a product-->
+            <img src="https://placehold.co/800x600/EEE/31343C" alt="{{ product.name }} image" />
+            <p>${{ product.price }}</p>
+            <button type="button" class="btn btn-secondary">Buy</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

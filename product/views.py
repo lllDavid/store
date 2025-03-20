@@ -3,9 +3,9 @@ from django.views.generic import ListView, DetailView
 from .models import Product
 
 
-class ProductListView(ListView):
+class ProductGridView(ListView):
     model = Product
-    template_name = 'product-list.html'
+    template_name = 'product-grid.html'
     context_object_name = 'products'
 
 class ProductDetailView(DetailView):
