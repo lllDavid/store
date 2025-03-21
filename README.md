@@ -9,6 +9,10 @@ E-Commerce store built with Django, very basic atm, missing most functions.
 
 ![Responsive](images/responsive.png)
 
+![Product Details](images/product-detail.png)
+
+![Cart](images/cart.png)
+
 # Installation
 
 ## Prerequisites:
