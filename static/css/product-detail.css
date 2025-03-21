@@ -5,3 +5,22 @@
     align-items: center;
     margin-top: 5rem;
 }
+
+#quantity-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#quantity {
+    height: fit-content;
+    width: fit-content;
+    margin: 0.5rem;
+}
+
+button {
+    width: 8rem;
+    height: fit-content;
+    margin: 0.5rem;
+}

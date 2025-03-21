@@ -9,6 +9,15 @@
     <p>{{ product.description }}</p>
     <p>Price: ${{ product.price }}</p>
     <p>Stock: {{ product.stock }}</p>
+    <form id="quantity-form">
+        <select class="form-select" name="quantity" id="quantity">
+            <option value="1">Quantity: 1</option>
+            {% for i in stock_range|slice:"1:" %}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button type="button" class="btn btn-secondary">Add to cart</button>
+        <button type="button" class="btn btn-warning">Buy now</button>
+    </form>
 </div>
-
 {% endblock %}

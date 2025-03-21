@@ -9,6 +9,11 @@ body {
     margin: 2rem;
 }
 
+#search-bar {
+    height: 2rem;
+    width: 12rem;
+}
+
 h1 {
     margin: 1rem;
 }

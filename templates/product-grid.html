@@ -11,10 +11,10 @@
     <div class="product-card">
         <a href="{% url 'product-detail' product.id %}">
             <h2>{{ product.name }}</h2>
-            <!-- Image is a example, normally use metadata attribute to store image of a product-->
+            <!-- Image is a example, normally use metadata attribute to store image url of a product-->
             <img src="https://placehold.co/800x600/EEE/31343C" alt="{{ product.name }} image" />
             <p>${{ product.price }}</p>
-            <button type="button" class="btn btn-secondary">Buy</button>
+            <button type="button" class="btn btn-secondary">Add to cart</button>
         </a>
     </div>
     {% endfor %}
