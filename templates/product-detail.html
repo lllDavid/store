@@ -1,23 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Details{% endblock %}
+{% block title %}Product{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/product-detail.css' %}">
+<h1>Product</h1>
+
 <div class="product-detail">
     <h1>{{ product.name }}</h1>
     <p>{{ product.description }}</p>
     <p>Price: ${{ product.price }}</p>
     <p>Stock: {{ product.stock }}</p>
-    <form id="quantity-form">
-        <select class="form-select" name="quantity" id="quantity">
-            <option value="1">Quantity: 1</option>
-            {% for i in stock_range|slice:"1:" %}
-            <option value="{{ i }}">{{ i }}</option>
-            {% endfor %}
-        </select>
-        <button type="button" class="btn btn-secondary">Add to cart</button>
-        <button type="button" class="btn btn-warning">Buy now</button>
+
+    <form action="{% url 'add-to-cart' product.id %}" method="post">
+        {% csrf_token %}
+        <div>
+            <select class="form-select" name="quantity" id="quantity">
+                <option value="1">Quantity: 1</option>
+                {% for i in stock_range %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-secondary">Add to Cart</button>
+        </div>
     </form>
+
+    <button class="btn btn-warning">Buy now</button>
 </div>
 {% endblock %}
