@@ -23,3 +23,14 @@ footer {
     margin-top: auto;
     opacity: 0.5;
 }
+
+/* Login/Logout Icon */
+.bi {
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.bi:hover {
+    opacity: 1.0;
+}

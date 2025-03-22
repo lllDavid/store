@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -24,17 +25,17 @@ class ProductDetailView(DetailView):
         context['stock_range'] = range(1, product.stock + 1)
         return context
 
+@login_required(login_url='login')
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity', 1))  
 
     cart, created = Cart.objects.get_or_create(user=request.user, is_active=True)
 
     cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
 
     cart_item.quantity = quantity if created else cart_item.quantity + quantity
-
+    
     cart_item.save()
 
     return HttpResponseRedirect(reverse('product-detail', args=[product_id]))
