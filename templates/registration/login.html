@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block title %}Login{% endblock %}
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
@@ -12,5 +13,6 @@
         <button type="submit">Submit</button>
     </form>
     <a href="#">Forgot password?</a>
+    <a href="{% url 'register' %}">Don't have an account? Sign Up here.</a>
 </div>
 {% endblock %}
