@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
 }
 
 #quantity-form {
@@ -15,12 +14,17 @@
 
 #quantity {
     height: fit-content;
-    width: fit-content;
+    width: 8rem;
     margin: 0.5rem;
 }
 
-button {
+#cart-button,
+#buy-button {
     width: 8rem;
     height: fit-content;
+
+}
+
+#cart-button {
     margin: 0.5rem;
 }

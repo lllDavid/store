@@ -1,13 +1,23 @@
 table,
 p {
-    margin: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin: 1.2rem;
 }
 
-th {
-    padding: 0.5rem;
-}
-
+th,
 td {
     padding: 0.5rem;
+}
+
+#table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#total-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
