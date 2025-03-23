@@ -1,22 +1,29 @@
-#login-form {
+#contact-form {
     max-width: 25rem;
     margin: 0 auto;
     padding: 1.25rem;
 }
 
-#login-form .form-group {
+#contact-form .form-group {
     margin-bottom: 1rem;
 }
 
-#login-form .form-group input {
+#contact-form form input,
+#contact-form form textarea {
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
-    border: 0.0625rem solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 0.25rem;
+    margin-bottom: 1rem;
 }
 
-#login-form button {
+#contact-form form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#contact-form button {
     width: 100%;
     padding: 0.625rem;
     background-color: #007bff;
@@ -26,18 +33,12 @@
     cursor: pointer;
 }
 
-#login-form button:hover {
+#contact-form button:hover {
     background-color: #0056b3;
 }
 
-#login-form a {
+#contact-form a {
     display: block;
     margin-top: 0.625rem;
     text-align: center;
-    text-decoration: none;
-}
-
-/* Hide Icon on Login Page */
-.bi {
-    display: none;
 }
