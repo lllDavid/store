@@ -1,23 +1,30 @@
 # Store
 ![Status](https://img.shields.io/badge/status-Early_Development-orange)
 
-E-Commerce store built with Django, very basic atm, missing most functions. 
+E-Commerce store built with Django. 
 
 ![Home](images/home.png)
 
-![Products](images/products.png)
+![Products](images/product-grid.png)
+
+![Products Details](images/product-detail.png)
 
 ![Responsive](images/responsive.png)
 
-![Product Details](images/product-detail.png)
-
 ![Cart](images/cart.png)
+
+![Register](images/register.png)
+
+![Login](images/login.png)
+
+![About](images/about.png)
+
+![Contact](images/contact.png)
 
 # Installation
 
 ## Prerequisites:
-- Python 3.13.1+
-- PostgreSQL 17.2+
+- Python 3.13 or later
 - pip
 
 ### Clone
@@ -85,8 +92,8 @@ CREATE USER username WITH PASSWORD 'password';
 ```bash
 CREATE DATABASE store_db;
 ```
-- This is my db config in Django:
-- 
+- DB Config (settings.py):
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -113,6 +120,5 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 
-- Access panel at (Might need to set admin account):
 http://127.0.0.1:8000/admin/
 
