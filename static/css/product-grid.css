@@ -1,12 +1,12 @@
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 1.25rem;
     margin-top: 2.25rem;
 }
 
 .product-card {
-    margin: 0.8225rem;
+    margin: 1.7225rem;
     border: 0.0625rem solid #ddd;
     padding: 0.9375rem;
     text-align: center;
