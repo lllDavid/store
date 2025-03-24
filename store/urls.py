@@ -29,6 +29,7 @@ urlpatterns = [
     path('', home_view, name='home'),
     path("products/", include('product.urls')),
     path('cart/', cart_view, name='cart'),
+    path('orders/', include('order.urls')), 
     path('about/', about_view, name='about'),
     path('contact/', contact_view, name='contact'),
     path('login/', auth_views.LoginView.as_view(), name='login'),

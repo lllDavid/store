@@ -29,8 +29,16 @@
         </tbody>
     </table>
 </div>
+
 <div id="total-container">
     <p><strong>Total:</strong> ${{ cart.get_total_cart_price }}</p>
+
+</div>
+<div id="buy-button-container">
+    <form action="{% url 'checkout'%}" method="get">
+        {% csrf_token %}
+        <button id="buy-button" class="btn btn-warning" type="submit">Buy Now</button>
+    </form>
 </div>
 {% else %}
 <p>Cart is empty.</p>
