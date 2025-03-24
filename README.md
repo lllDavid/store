@@ -5,13 +5,15 @@ E-Commerce store built with Django.
 
 ![Home](images/home.png)
 
-![Products](images/product-grid.png)
+![Products](images/products-grid.png)
 
-![Products Details](images/product-detail.png)
+![Products Details](images/product-details.png)
 
 ![Responsive](images/responsive.png)
 
 ![Cart](images/cart.png)
+
+![Checkout](images/checkout.png)
 
 ![Register](images/register.png)
 
@@ -21,11 +23,20 @@ E-Commerce store built with Django.
 
 ![Contact](images/contact.png)
 
-# Installation
+## Features
+- Products Grid view
+- Products Detail view
+- Register user
+- Login/Logout user
+- Add products to cart
+- Cart overview
+- Checkout functionality (Missing actual payment/shipping process)
 
 ## Prerequisites:
-- Python 3.13 or later
-- pip
+- Python 3.13+
+- `pip`
+
+# Installation
 
 ### Clone
 ```bash
