@@ -3,6 +3,16 @@
 
 E-Commerce store built with Django. 
 
+## Features
+- Products Grid view
+- Products Detail view
+- Register user
+- Login/Logout user
+- Add products to cart
+- Cart overview
+- Checkout functionality (Missing actual payment/shipping process)
+
+
 ![Home](images/home.png)
 
 ![Products](images/products-grid.png)
@@ -22,15 +32,6 @@ E-Commerce store built with Django.
 ![About](images/about.png)
 
 ![Contact](images/contact.png)
-
-## Features
-- Products Grid view
-- Products Detail view
-- Register user
-- Login/Logout user
-- Add products to cart
-- Cart overview
-- Checkout functionality (Missing actual payment/shipping process)
 
 ## Prerequisites:
 - Python 3.13+
@@ -70,7 +71,6 @@ pip install -r requirements.txt
 
 ## Linux
 ```bash
-sudo apt update
 sudo apt install postgresql postgresql-contrib
 ```
 
@@ -80,7 +80,7 @@ sudo apt install postgresql postgresql-contrib
 ## Create User
 
 ### Linux
-#### Use postgres user
+#### Use Postgres user
 ```bash
 sudo -i -u postgres
 ```
@@ -92,18 +92,39 @@ psql -U postgres
 ```bash
 ALTER USER postgres PASSWORD 'root';
 ```
-#### Create new user
+#### Or create user
+```bash
+CREATE USER username WITH PASSWORD 'password';
+```
+(Remember to adjust config below (Create Database))
+
+### Windows
+- Open Command Prompt or PowerShell as an administrator.
+
+- Switch to the PostgreSQL user directory:
+
+```bash
+cd C:\Program Files\PostgreSQL\<version>\bin
+```
+- Start the PostgreSQL session:
+```bash
+psql -U postgres
+```
+- Once logged in, change the password or create a new user:
+
+```bash
+ALTER USER postgres PASSWORD 'root';
+```
 ```bash
 CREATE USER username WITH PASSWORD 'password';
 ```
 (Remember to adjust config below)
 
-
 ## Create Database 
 ```bash
 CREATE DATABASE store_db;
 ```
-- DB Config (settings.py):
+- DB Config (store/settings.py):
 
 DATABASES = {
     'default': {
@@ -120,10 +141,10 @@ DATABASES = {
 ```bash
 python manage.py migrate
 ```
-
 # Run
 ```bash
 python manage.py runserver
+
 ```
 
 - To access admin panel:
@@ -131,5 +152,5 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 
-http://127.0.0.1:8000/admin/
+- URL: http://127.0.0.1:8000/admin/
 
