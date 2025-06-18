@@ -30,7 +30,7 @@
 - `pip`
 
 ## Installation
-You can set up the **Store** using **Git**.
+You can set up the **Store** in two ways: using **Git** or **Docker**.
 
 ## How to Use with Git
 
@@ -74,7 +74,7 @@ Add PostgreSQL to **PATH** environment variable
 psql -U postgres
 ```
 ### 5. Create Database 
-```bash
+```text
 CREATE DATABASE store_db;
 ```
 - Exact **DB Config** is located in: store/settings.py
@@ -88,4 +88,45 @@ python manage.py migrate
 python manage.py runserver
 
 ```
-### This will start the App at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+### This will start the App at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## How to Use with Docker
+
+#### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/lllDavid/store
+```
+### 2. **Navigate to the directory:**
+```bash
+cd store
+```
+### 3. Build and run the Container
+
+```bash
+docker-compose up 
+```
+### This will start the App at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+# Products
+- The Products database is empty at the start.
+
+### 1. Create a Superuser Account
+You can create a superuser account to add your own products manually:
+```bash
+python manage.py createsuperuser # regular environment
+```
+```bash
+docker exec -it store-app-1 python manage.py createsuperuser # Docker environment
+```
+### 2. Generate Random Products
+Alternatively, generate a specified number of random products:
+```bash
+python manage.py create_products <n> # regular environment
+```
+```bash
+docker exec -it store-app-1 python manage.py create_products <n> # Docker environment
+```
