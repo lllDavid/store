@@ -1,5 +1,7 @@
 # Store
-- E-Commerce store built with Django.
+
+- This project replicates an online store experience, allowing users to browse products, view product details, manage cart contents, and handle account login and registration.
+
 ## Features
 - Product Grid View
 - Product Details View
@@ -11,145 +13,79 @@
 - Cart Overview
 - Checkout Functionality (Missing Actual Payment/Shipping Process)
 
-
 ![Home](images/home.png)
-
 ![Products](images/products-grid.png)
-
-![Products Details](images/product-details.png)
-
+![Product Details](images/product-details.png)
 ![Responsive](images/responsive.png)
-
 ![Cart](images/cart.png)
-
 ![Checkout](images/checkout.png)
-
 ![Register](images/register.png)
-
 ![Login](images/login.png)
-
 ![About](images/about.png)
-
 ![Contact](images/contact.png)
 
 ## Prerequisites:
 - Python 3.13+
+- PostgreSQL
 - `pip`
 
-# Installation
+## Installation
+You can set up the **Store** using **Git**.
 
-### Clone
+## How to Use with Git
+
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/lllDavid/store
 ```
 
-### Change Directory
+### 2. Install dependencies
+**Navigate to the directory:**
 ```bash
 cd store
 ```
 
-### Setup venv
-
-### Linux
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-### Windows 
+**Create a virtual environment:**
 ```bash
 python -m venv venv
-venv\Scripts\activate
 ```
 
-### Install dependencies
+
+**Activate the virtual environment:**
+```bash
+.\venv\Scripts\activate
+```
+
+
+**Install requirements:**
 ```bash
 pip install -r requirements.txt
 ```
 
-# Setup PostgreSQL
+### 3. Setup PostgreSQL
+**Download and install PostgreSQL from their official site:** [PostgreSQL](https://www.postgresql.org/download/)
 
-## Linux
-```bash
-sudo apt install postgresql postgresql-contrib
-```
+Add PostgreSQL to **PATH** environment variable
 
-## Windows
-- Download and install PostgreSQL: https://www.postgresql.org/download/
+### 4. Connect to Database
 
-## Create User
-
-### Linux
-#### Use Postgres user
-```bash
-sudo -i -u postgres
-```
-
+**Login to PostgreSQL Session**
 ```bash
 psql -U postgres
 ```
-
-```bash
-ALTER USER postgres PASSWORD 'root';
-```
-#### Or create user
-```bash
-CREATE USER username WITH PASSWORD 'password';
-```
-(Remember to adjust config below (Create Database))
-
-### Windows
-- Open Command Prompt or PowerShell as an administrator.
-
-- Switch to the PostgreSQL user directory:
-
-```bash
-cd C:\Program Files\PostgreSQL\<version>\bin
-```
-- Start the PostgreSQL session:
-```bash
-psql -U postgres
-```
-- Once logged in, change the password or create a new user:
-
-```bash
-ALTER USER postgres PASSWORD 'root';
-```
-```bash
-CREATE USER username WITH PASSWORD 'password';
-```
-(Remember to adjust config below)
-
-## Create Database 
+### 5. Create Database 
 ```bash
 CREATE DATABASE store_db;
 ```
-- DB Config (store/settings.py):
+- Exact **DB Config** is located in: store/settings.py
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'store_db',  
-        'USER': 'postgres',  
-        'PASSWORD': 'root',  
-        'HOST': 'localhost',  
-        'PORT': '5432',  
-    }
-}
-
-# Apply Database migrations
+### 6. Apply Database migrations
 ```bash
 python manage.py migrate
 ```
-# Run
+### 7. Run the Application
 ```bash
 python manage.py runserver
 
 ```
-
-- To access admin panel:
-```bash
-python manage.py createsuperuser
-```
-
-- URL: http://127.0.0.1:8000/admin/
-
+### This will start the App at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
